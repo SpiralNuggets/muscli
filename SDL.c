@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <SDL.h>
-#include <SDL_mixer.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_mixer.h>
 
-int main(int argc, char* argv[])
+main(int argc, char* argv[])
 {
     SDL_Init(SDL_INIT_AUDIO);
     Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
 
-    Mix_Music *bgm = Mix_LoadMUS("Way-Back-Home.mp3");
+    Mix_Music *bgm = Mix_LoadMUS(argv[1]);
     Mix_Chunk *effect = Mix_LoadWAV(".wav");
 
 

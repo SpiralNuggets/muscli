@@ -10,10 +10,12 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "/usr/bin/gcc",
+            "compilerPath": "C:/MinGW/bin/g++.exe",
             "cStandard": "gnu17",
             "cppStandard": "gnu++14",
-            "intelliSenseMode": "linux-gcc-x64"
+            "intelliSenseMode": "${default}",
+            "configurationProvider": "ms-vscode.cmake-tools",
+            "windowsSdkVersion": "10.0.17134.0"
         }
     ],
     "version": 4

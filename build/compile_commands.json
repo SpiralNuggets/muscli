@@ -1,0 +1,7 @@
+[
+{
+  "directory": "C:/Users/PC/Documents/GitHub/muscli/build",
+  "command": "C:/msys64/mingw64/bin/x86_64-w64-mingw32-gcc.exe  @CMakeFiles/muscli.dir/includes_C.rsp -O2 -g -DNDEBUG -o CMakeFiles/muscli.dir/SDL.c.obj -c C:/Users/PC/Documents/GitHub/muscli/SDL.c",
+  "file": "C:/Users/PC/Documents/GitHub/muscli/SDL.c"
+}
+]
