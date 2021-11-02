@@ -4,7 +4,7 @@
 # compile C with C:/msys64/mingw64/bin/gcc.exe
 C_DEFINES = 
 
-C_INCLUDES = 
+C_INCLUDES = @CMakeFiles/muscli.dir/includes_C.rsp
 
 C_FLAGS = -g
 

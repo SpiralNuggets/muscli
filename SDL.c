@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include <stdbool.h>
-#include "SDL2/SDL.h"
-#include "SDL2/SDL_mixer.h"
+#include "include/SDL2/SDL.h"
+#include "include/SDL2/SDL_mixer.h"
 
 main(int argc, char* argv[])
 {

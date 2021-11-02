@@ -66,6 +66,7 @@ include CMakeFiles/muscli.dir/progress.make
 include CMakeFiles/muscli.dir/flags.make
 
 CMakeFiles/muscli.dir/SDL.c.obj: CMakeFiles/muscli.dir/flags.make
+CMakeFiles/muscli.dir/SDL.c.obj: CMakeFiles/muscli.dir/includes_C.rsp
 CMakeFiles/muscli.dir/SDL.c.obj: ../SDL.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\PC\Documents\GitHub\muscli\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/muscli.dir/SDL.c.obj"
 	C:\msys64\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\muscli.dir\SDL.c.obj -c C:\Users\PC\Documents\GitHub\muscli\SDL.c
