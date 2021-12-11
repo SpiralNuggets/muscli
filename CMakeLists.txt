@@ -1,7 +1,17 @@
- cmake_minimum_required(VERSION 3.20)
- project(project)
+cmake_minimum_required(VERSION 3.0.0)
+project(muscli_raylib VERSION 0.1.0)
 
- set(CMAKE_CXX_STANDARD 14)
- link_libraries("winmm.lib")
+include(CTest)
+enable_testing()
+include_directories(include)
 
- add_executable(project mainau.cpp)
+add_executable(muscli_raylib main.c)
+
+set(CPACK_PROJECT_NAME ${PROJECT_NAME})
+set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+
+target_include_directories(muscli_raylib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(muscli_raylib raylib)
+target_link_libraries(muscli_raylib winmm.lib)
+
+include(CPack)
