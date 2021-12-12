@@ -15,6 +15,10 @@ bool musicloop(Music song){
 }
 
 int main(int argc, char** argv){
+    if (argc == 1){
+        std::cout<<"muscli: no song given."
+        return 0;
+    }
     bool pause = false;
     InitAudioDevice();
     Music song = LoadMusicStream(argv[1]);
