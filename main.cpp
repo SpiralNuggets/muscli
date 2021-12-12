@@ -1,10 +1,12 @@
 #include "stdio.h"
 #include "include/raylib.h"
-#include "include/taglib/taglib.h"
+//#include "include/taglib/tag.h"
+//#include "include/taglib/fileref.h"
 #include <future>
 #include <iostream>
 #include <string>
 #include <chrono>
+
 bool musicloop(Music song){
     while(GetMusicTimePlayed(song) != GetMusicTimeLength(song)){
         UpdateMusicStream(song);
@@ -38,8 +40,10 @@ int main(int argc, char** argv){
             StopMusicStream(song);
             break;
         }
-        /*if (command == "nowplaying"){
-            TagLib::FileRef::FileRef file(argv[1]); 
+        //--- FILEREF CONFLICTS WITH RAYLIB---
+       /*else if (command == "nowplaying"){
+            TagLib::FileRef file(argv[1]);
+            std::cout<<"Now Playing:\n"<<file.tag()->title()<<std::endl<<file.tag()->artist()<<std::endl<<file.tag()->album()<<std::endl;
         }*/
         else std::cout<<"Invalid command";
         }
