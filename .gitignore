@@ -9,7 +9,6 @@ cmake-build*
 *.dll
 *.a
 *.lib
-necoarc.png
 
 #the entirety of https://github.com/github/gitignore/blob/master/CMake.gitignore
 CMakeLists.txt.user
