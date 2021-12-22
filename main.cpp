@@ -76,8 +76,8 @@ int main(int argc, char** argv){
     }
     if (argc == 3 && strcmp(argv[2],"-s")){
         std::string songname=argv[3];
+        std::cout<<"string part ok";
         song(songname);
-        return 0;
     }
     if (argc == 3 && strcmp(argv[2],"-p")){
         std::list<std::string> playlist;
@@ -85,7 +85,6 @@ int main(int argc, char** argv){
             song(playlist.front());
             playlist.pop_front();
         }
-        return 0;
     }
 
 }
