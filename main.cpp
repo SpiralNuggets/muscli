@@ -28,11 +28,10 @@ bool musicloop(Music song){
 void song(std::string filenamestr){
     const char * filename = filenamestr.c_str();
     bool pause = false;
-    InitAudioDevice();
     Music song = LoadMusicStream(filename);
     PlayMusicStream(song);
     std::string command;
-    std::future<bool> musended = std::async(musicloop,song);
+    std::thread musicthread(musicloop,song);
     while(true){
         std::cout<<"muscli>";
           std::getline(std::cin,command);
@@ -60,10 +59,8 @@ void song(std::string filenamestr){
         }*/
         else std::cout<<"Invalid command"<<std::endl;
         }
-    std::cout<<"Unloading music";
+    musicthread.detach();
     UnloadMusicStream(song);
-    std::cout<<"Unloading music done";
-    CloseAudioDevice();
 }
 
 int main(int argc, char** argv){
@@ -84,13 +81,15 @@ int main(int argc, char** argv){
             CloseAudioDevice(); 
         }
         else if (strcmp(argv[1],"-p")==0){
+            InitAudioDevice();
             std::list<std::string> playlist;
             makelist(argv[2],playlist);
             while (!playlist.empty()){
                 song(playlist.front());
-                std::cout<<"Next song";
+                std::cout<<"Next song\n";
                 playlist.pop_front();
             }
+            CloseAudioDevice();
         }
     }
     else{
