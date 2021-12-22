@@ -74,9 +74,7 @@ int main(int argc, char** argv){
     }
     else if (argc == 3){
         if (strcmp(argv[1],"-s")==0){
-            std::cout<<"string compare part ok";
             std::string songname(argv[2]);
-            std::cout<<"string conversion part ok";
             song(songname);
             CloseAudioDevice(); 
         }
@@ -86,13 +84,13 @@ int main(int argc, char** argv){
             makelist(argv[2],playlist);
             while (!playlist.empty()){
                 song(playlist.front());
-                std::cout<<"Next song\n";
                 playlist.pop_front();
             }
             CloseAudioDevice();
         }
     }
     else{
-        std::cout<<"lmao";
+        std::cout<<"muscli: what";
+        return 1;
         }
 }
