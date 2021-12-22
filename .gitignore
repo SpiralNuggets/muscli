@@ -9,6 +9,7 @@ cmake-build*
 *.dll
 *.a
 *.lib
+playlist.txt
 
 #the entirety of https://github.com/github/gitignore/blob/master/CMake.gitignore
 CMakeLists.txt.user
