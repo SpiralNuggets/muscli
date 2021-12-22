@@ -74,17 +74,17 @@ int main(int argc, char** argv){
         std::cout<<"muscli: no song or playlist given";
         return 1;
     }
-    if (argc == 3 && strcmp(argv[2],"-s")){
-        std::string songname=argv[3];
-        std::cout<<"string part ok";
+    if (argc == 3 && strcmp(argv[1],"-s")){
+        std::cout<<"string compare part ok";
+        std::string songname(argv[2]);
+        std::cout<<"string conversion part ok";
         song(songname);
     }
-    if (argc == 3 && strcmp(argv[2],"-p")){
+    if (argc == 3 && strcmp(argv[1],"-p")){
         std::list<std::string> playlist;
         while (!playlist.empty()){
             song(playlist.front());
             playlist.pop_front();
         }
     }
-
 }
