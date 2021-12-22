@@ -2,14 +2,15 @@
 #include "include/raylib.h"
 //#include "include/taglib/tag.h"
 //#include "include/taglib/fileref.h"
+#include <list>
 #include <future>
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstring>
 #include <chrono>
 
-std::list<std::string> makelist(const char* filename, std::list<std::string>& lines)
-{   
+void makelist(const char* filename, std::list<std::string>& lines){   
     lines.clear();
     std::ifstream file(filename);
     std::string s;
@@ -79,8 +80,11 @@ int main(int argc, char** argv){
     }
     if (argc == 3 && strcmp(argv[2],"-p")){
         std::list<std::string> playlist;
-        song(argv[3]);
+        while (!playlist.empty()){
+            song(playlist.front());
+            playlist.pop_front();
+        }
         return 0;
     }
-    
+
 }
