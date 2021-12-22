@@ -25,7 +25,7 @@ bool musicloop(Music song){
     return true;
 }
 
-int song(std::string filenamestr){
+void song(std::string filenamestr){
     const char * filename = filenamestr.c_str();
     bool pause = false;
     InitAudioDevice();
@@ -63,6 +63,7 @@ int song(std::string filenamestr){
     std::cout<<"Unloading music";
     UnloadMusicStream(song);
     std::cout<<"Unloading music done";
+    CloseAudioDevice();
 }
 
 int main(int argc, char** argv){
@@ -86,10 +87,10 @@ int main(int argc, char** argv){
             std::list<std::string> playlist;
             makelist(argv[2],playlist);
             while (!playlist.empty()){
-                std::cout<<playlist.front()<<std::endl;
+                song(playlist.front());
+                std::cout<<"Next song";
                 playlist.pop_front();
             }
-            CloseAudioDevice();
         }
     }
     else{
