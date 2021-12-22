@@ -75,7 +75,8 @@ int main(int argc, char** argv){
         return 1;
     }
     if (argc == 3 && strcmp(argv[2],"-s")){
-        song(argv[3]);
+        std::string songname=argv[3];
+        song(songname);
         return 0;
     }
     if (argc == 3 && strcmp(argv[2],"-p")){
